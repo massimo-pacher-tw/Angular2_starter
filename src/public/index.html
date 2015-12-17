@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <title>Angular2 Webpack Starter by @gdi2990 from @AngularClass</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Angular2 Webpack Starter by @gdi2990 from @AngularClass">
+
+  <!-- use http://www.favicon-generator.org/ to replace files in public/icon-->
+  <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/icon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/icon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <link rel="stylesheet" href="http://bootstrap.transferwise.com/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/__build__/css/app.css">
+
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="/icon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#00bcd4">
+  <!-- end favicon -->
+  <!--<script src="js/tw.navigation.js"></script>-->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.20/angular.min.js"></script>
+  <script src="http://juliemr.github.io/protractor-demo/calc.js"></script>
+  <!-- base url -->
+  <base href="/">
+
+</head>
+<body class="text-center">
+
+  <!--<tw-navigation ng-app="tw.navigation"></tw-navigation>-->
+    <h1>NG1 APP</h1>
+
+  <div ng-app="calculator" ng-controller="CalcCtrl" class="container ng-cloak">
+    <div>
+      <h3>Super Calculator</h3>
+      <form class="form-inline">
+        <input ng-model="first" type="text" class="input-small"/>
+        <select ng-model="operator" class="span1"
+                ng-options="value for (key, value) in operators">
+        </select>
+        <input ng-model="second" type="text" class="input-small"/>
+        <button ng-click="doAddition()" id="gobutton" class="btn">Go!</button>
+        <h2>{{latest}}</h2>
+      </form>
+    </div>
+    <h4>History</h4>
+    <table class="table">
+      <thead><tr>
+        <th>Time</th>
+        <th>Expression</th>
+        <th>Result</th>
+      </tr></thead>
+      <tr ng-repeat="result in memory">
+        <td>
+          {{result.timestamp | date:'mediumTime'}}
+        </td>
+        <td>
+          <span>{{result.first}}</span>
+          <span>{{result.operator}}</span>
+          <span>{{result.second}}</span>
+        </td>
+        <td>{{result.value}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <h1>NG2 APP <span class="glyphicon glyphicon-search" aria-hidden="true"></span></h1>
+
+  <app>
+    Loading ng2 ...
+  </app>
+
+  <!-- Common files to be cached -->
+  <script src="/__build__/common.js"></script>
+  <!-- Vendor files -->
+  <script src="/__build__/vendor.js"></script>
+  <!-- App script -->
+  <script src="/__build__/app.js"></script>
+
+  <!-- Google Analytics: change UA-71073175-1 to be your site's ID -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-71073175-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+</body>
+</html>
