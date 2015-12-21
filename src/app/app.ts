@@ -2,7 +2,7 @@
  * Angular 2 decorators and services
  */
 // import TW Boostrap CSS
-import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap/dist/css/bootstrap.css';
 
 import {Component} from 'angular2/core';
 import {RouteConfig, Router, ROUTER_DIRECTIVES} from 'angular2/router';
